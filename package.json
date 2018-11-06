@@ -1,0 +1,28 @@
+{
+  "name": "graphql-fastify",
+  "version": "0.0.1",
+  "description": "graphql-js plugin for fastify",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kwalski/graphql-fastify.git"
+  },
+  "keywords": [
+    "fastify",
+    "graphql",
+    "graphql-js"
+  ],
+  "author": "Gi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kwalski/graphql-fastify/issues"
+  },
+  "homepage": "https://github.com/kwalski/graphql-fastify#readme",
+  "dependencies": {
+    "fastify": "^1.13.0",
+    "graphql": "^14.0.2"
+  }
+}
