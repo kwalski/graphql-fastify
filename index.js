@@ -14,7 +14,6 @@ module.exports = (fastify, { prefix, graphQLOptions }, next) => {
     }
     const handler = async (request, reply) => {
         try {
-            console.log("request:", request);
             const opts =
                 typeof graphQLOptions === "function"
                     ? graphQLOptions(request, reply)

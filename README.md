@@ -68,7 +68,7 @@ var schema = buildSchema(`
 ```
 
 ## Example resolver
-Following example shows nested resolver to query user's friends
+Following example shows how to (nested) query user and user's friends
 ```
 class User {
     constructor(u) {
@@ -83,7 +83,7 @@ class User {
 }
 var resolver = {
     getUser: (args, context) => {
-	    //retrieve user from database
+	    //retrieve user by args.id
         return new User({
             name: "Watson",
             id: args.id,
