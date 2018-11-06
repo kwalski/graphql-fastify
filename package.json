@@ -1,6 +1,6 @@
 {
   "name": "graphql-fastify",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "graphql-js plugin for fastify",
   "main": "index.js",
   "scripts": {
