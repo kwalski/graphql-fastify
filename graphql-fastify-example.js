@@ -5,25 +5,23 @@ const graphqlFastify = require("./index");
 var { graphql, buildSchema } = require("graphql");
 
 var schema = buildSchema(`
-  type Query {
-    getUser(id:ID): User
-  }
-  type Mutation {
+    type Query {
+        getUser(id:ID): User
+    }
+    type Mutation {
+        updateUser (id:ID,name:String,age:Int): User
+    }
 
-    updateUser (id:ID,name:String,age:Int): User
-}
+    type User {
+        id: ID,
+        name: String,
+        age: Int
+        friends: [Friend]
+    }
 
-  type User {
-    id: ID,
-    name: String,
-    age: Int
-    friends: [Friend]
-  }
-
-  type Friend{
+    type Friend{
         name: String
-  }
-
+    }
 `);
 
 class User {
@@ -33,7 +31,7 @@ class User {
         this.age = u.age;
     }
     friends(user, args, context) {
-        return [{ name: "Sherlock"}];
+        return [{ name: "Sherlock" }];
     }
 }
 var resolver = {
