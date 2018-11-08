@@ -1,7 +1,9 @@
+
 ## GrapQL-Fastify
 
 This [Fastify](https://github.com/fastify/fastify) plugin uses [graphql-js](https://github.com/graphql/graphql-js) implementation.
 
+## Why this one?
 A unique advantage of this plugin is that it gives you access to http request and response before executing graphql query, so that you can create a context for the resolver. If you are thinking of implementing any user authentication (eg jwt), then this is your bet (see graphQLOptions as function below).
 
 ### Alternative implementations
@@ -31,7 +33,7 @@ graphQLOptions can be provided as an **_object_** or a **_function_** that retur
     graphQLOptions: {
         schema: schema,
         rootValue: resolver
-        context?: context
+        contextValue?: context
     }
 
 If it is a function, you have access to http request and response. This allows you to do authentication and pass authentication scopes to graphql context. See the following pseudo-code
@@ -43,11 +45,11 @@ If it is a function, you have access to http request and response. This allows y
         return  {
     	     schema: schema,
     		 rootValue: resolver,
-    	     context: {auth}
+    	     contextValue: {auth}
          }
     });
 
-This way, `context.auth` is accessible to resolver functions where you can retrieve data based on user's scope/permissions.
+This way, `context.auth` is accessible to resolver functions (see signature below), allowing you to check user's scope/permissions before proceeding. For convenience, you may set fastify and/or db connection on context s
 
 ### schema
 
@@ -111,8 +113,8 @@ var resolver = {
 
 Following is an example query and its response using above schema and resolver
 
+**GraphQL Query**
 ```
-// query
  {
   getUser(id:5) {
     id
@@ -123,8 +125,10 @@ Following is an example query and its response using above schema and resolver
     }
   }
 }
+```
 
-//response
+**Result**
+```
 {
   "data": {
     "getUser": {
@@ -140,10 +144,7 @@ Following is an example query and its response using above schema and resolver
   }
 }
 ```
-
-
-
-###
+ 
 
 ### Licence
 
