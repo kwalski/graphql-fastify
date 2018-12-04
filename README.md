@@ -1,5 +1,5 @@
 
-## GrapQL-Fastify
+## GraphQL-Fastify
 
 This [Fastify](https://github.com/fastify/fastify) plugin uses [graphql-js](https://github.com/graphql/graphql-js) implementation.
 
@@ -115,7 +115,7 @@ Following is an example query and its response using above schema and resolver
 
 **GraphQL Query**
 ```
- {
+{
   getUser(id:5) {
     id
     name
