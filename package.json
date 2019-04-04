@@ -23,6 +23,6 @@
   "homepage": "https://github.com/kwalski/graphql-fastify#readme",
   "dependencies": {
     "fastify": "^1.13.0",
-    "graphql": "^14.0.2"
+    "graphql": "^14.2.1"
   }
 }
